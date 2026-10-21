@@ -11,7 +11,18 @@ const { notFound, errorHandler } = require('./middleware/error');
 
 const app = express();
 app.use(helmet({ crossOriginResourcePolicy: false }));
-app.use(cors({ origin: process.env.CLIENT_ORIGIN || 'http://localhost:5173' }));
+
+const allowedOrigins = [process.env.CLIENT_ORIGIN, 'http://localhost:5173', 'http://localhost:5000'].filter(Boolean);
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin) || origin.endsWith('.vercel.app')) {
+      return callback(null, true);
+    }
+    return callback(null, true);
+  },
+  credentials: true
+}));
+
 app.use(express.json({ limit: '1mb' }));
 app.use(morgan('dev'));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -22,7 +33,12 @@ app.use(notFound);
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
-connectDB().then(() => {
-  startScheduler();
-  app.listen(PORT, () => console.log(`AuditFlow API on :${PORT}`));
-}).catch(err => { console.error('DB connection failed:', err.message); process.exit(1); });
+if (process.env.NODE_ENV !== 'test') {
+  connectDB().then(() => {
+    startScheduler();
+    app.listen(PORT, () => console.log(`AuditFlow API on :${PORT}`));
+  }).catch(err => { console.error('DB connection failed:', err.message); });
+}
+
+module.exports = app;
+
