@@ -9,9 +9,12 @@ const Report = require('../models/Report');
 
 const d = (days) => new Date(Date.now() + days * 864e5);
 
-(async () => {
-  await mongoose.connect(process.env.MONGO_URI);
+const seedDB = async () => {
+  if (mongoose.connection.readyState !== 1) {
+    await mongoose.connect(process.env.MONGO_URI);
+  }
   await Promise.all([User, Site, Audit, Inspection, Capa, Report].map(m => m.deleteMany({})));
+
 
   // Users (Tamil Nadu EHS & Audit team)
   const admin = await User.create({
@@ -283,5 +286,14 @@ const d = (days) => new Date(Date.now() + days * 864e5);
   ]);
 
   console.log('Seeded with Tamil Nadu industrial and environmental data.\n  admin@auditflow.io / admin123 (Karthik Sundaram - Admin)\n  auditor@auditflow.io / audit123 (MONISH H - Auditor)\n  manager@auditflow.io / manager123 (Senthil Nathan - Site Manager)');
-  process.exit(0);
-})();
+};
+
+if (require.main === module) {
+  seedDB().then(() => process.exit(0)).catch(err => {
+    console.error('Seeding failed:', err);
+    process.exit(1);
+  });
+}
+
+module.exports = { seedDB };
+

@@ -34,11 +34,23 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 if (process.env.NODE_ENV !== 'test') {
-  connectDB().then(() => {
+  connectDB().then(async () => {
+    try {
+      const User = require('./models/User');
+      const userCount = await User.countDocuments();
+      if (userCount === 0) {
+        console.log('Empty database detected. Auto-seeding initial demo data...');
+        const { seedDB } = require('./utils/seed');
+        await seedDB();
+      }
+    } catch (seedErr) {
+      console.warn('Auto-seed check skipped or failed:', seedErr.message);
+    }
     startScheduler();
     app.listen(PORT, () => console.log(`AuditFlow API on :${PORT}`));
   }).catch(err => { console.error('DB connection failed:', err.message); });
 }
 
 module.exports = app;
+
 
