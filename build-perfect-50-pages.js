@@ -97,65 +97,73 @@ out.write(`<!DOCTYPE html>
   }
 
   h1.title {
-    font-size: 15.5pt;
+    font-size: 16pt;
     font-weight: bold;
     text-align: center;
     line-height: 1.35;
-    margin: 14px 0 16px 0;
+    margin: 12px 0 14px 0;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
   }
   h2.report-sub {
-    font-size: 13pt;
+    font-size: 16pt;
     font-weight: bold;
     text-align: center;
-    margin: 16px 0;
+    margin: 14px 0;
     letter-spacing: 1px;
+    font-family: 'Times New Roman', Times, serif;
   }
   h3.ch-num {
     text-align: center;
-    font-size: 13pt;
+    font-size: 16pt;
     font-weight: bold;
-    margin: 0 0 3px 0;
+    margin: 0 0 2px 0;
     letter-spacing: 0.5px;
+    font-family: 'Times New Roman', Times, serif;
   }
   h3.ch-title {
-    font-size: 13.5pt;
+    font-size: 16pt;
     font-weight: bold;
     text-align: center;
-    margin: 0 0 14px 0;
+    margin: 0 0 10px 0;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
   }
   h4.sec {
-    font-size: 12.5pt;
+    font-size: 16pt;
     font-weight: bold;
-    margin: 10px 0 4px 0;
-    text-align: left;
-  }
-  h5.subsec {
-    font-size: 10pt;
-    font-weight: bold;
-    font-style: italic;
     margin: 8px 0 3px 0;
     text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  h5.subsec {
+    font-size: 13pt;
+    font-weight: bold;
+    font-style: italic;
+    margin: 6px 0 2px 0;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
   }
 
   p {
     text-align: justify;
     text-justify: inter-word;
-    margin: 4px 0;
+    margin: 3.5px 0;
     text-indent: 24px;
-    font-size: 10pt;
-    line-height: 1.45;
+    font-size: 12pt;
+    line-height: 1.42;
+    font-family: 'Times New Roman', Times, serif;
   }
   p.no-indent { text-indent: 0; }
 
   ul, ol {
-    margin: 6px 0 8px 24px;
+    margin: 4px 0 6px 20px;
     padding: 0;
-    font-size: 10pt;
-    line-height: 1.52;
+    font-size: 12pt;
+    line-height: 1.40;
+    font-family: 'Times New Roman', Times, serif;
   }
   li { margin-bottom: 5px; text-align: justify; }
 
@@ -199,11 +207,11 @@ out.write(`<!DOCTYPE html>
   pre {
     background: #f8fafc;
     border: 1px solid #cbd5e1;
-    padding: 4px 6px;
+    padding: 3px 5px;
     font-family: 'Courier New', monospace;
-    font-size: 7.8pt;
-    line-height: 1.25;
-    margin: 5px 0;
+    font-size: 7.6pt;
+    line-height: 1.20;
+    margin: 4px 0;
     white-space: pre-wrap;
     word-break: break-all;
   }
@@ -413,14 +421,10 @@ writePage(4, `
   </p>
 
   <p>
-    Furthermore, AuditFlow introduces automated environmental inspection telemetry monitoring. Pre-save Mongoose validation hooks continuously evaluate discharge readings (e.g., BOD, COD, TSS, TDS, and PM2.5) against statutory consent limits; any exceedance immediately raises an automated CAPA incident. Corrective workflows follow a strict four-stage verification pipeline (Open ➔ In Progress ➔ Pending Verification ➔ Closed) with Role-Based Access Control (RBAC), ensuring that while facility managers record root-causes and upload Multer-backed photographic evidence, only authorized auditors or administrators can verify and close actions. An automated background cron daemon performs daily midnight scans, dynamically flagging overdue actions on an executive 60-day visual timeline ribbon. Finally, a statutory reporting engine synthesizes live operational data into regulatory returns with instant CSV export.
+    Furthermore, AuditFlow introduces automated environmental inspection telemetry monitoring. Pre-save Mongoose validation hooks continuously evaluate discharge readings (e.g., BOD, COD, TSS, TDS, and PM2.5) against statutory consent limits; any exceedance immediately raises an automated CAPA incident. Corrective workflows follow a strict four-stage verification pipeline (Open ➔ In Progress ➔ Pending Verification ➔ Closed) with Role-Based Access Control (RBAC), ensuring that while facility managers record root-causes and upload Multer-backed photographic evidence, only authorized auditors or administrators can verify and close actions. An automated background cron daemon performs daily midnight scans, dynamically flagging overdue actions on an executive 60-day visual timeline ribbon. Finally, a statutory reporting engine synthesizes live operational data into regulatory returns with instant CSV export, deployed across a decoupled cloud topology (Vercel, Render, and MongoDB Atlas).
   </p>
 
-  <p>
-    The platform is deployed across a decoupled cloud topology leveraging Vercel for the React frontend, Render for the Express REST service, and MongoDB Atlas for resilient multi-region database clustering. As an academic engineering prototype, AuditFlow operates on realistic simulated industrial compliance data while establishing an extensible software architecture prepared for future industrial Internet of Things (IoT) hardware integration.
-  </p>
-
-  <p class="no-indent" style="margin-top: 18px;">
+  <p class="no-indent" style="margin-top: 14px;">
     <b>Keywords:</b> Environmental Audits, MERN Stack, Automated CAPA, Statutory Reporting, Pollution Control, Limit Exceedance, Role-Based Access Control, Mongoose Hooks, Cloud Deployment.
   </p>
 `);
@@ -644,51 +648,45 @@ writePage(10, `
     The global drive toward industrial environmental stewardship, sustainable manufacturing, and circular resource management has established environmental auditing and pollution control as critical pillars of modern engineering operations [1]. Heavy manufacturing, chemical synthesis, textile bleaching and dyeing, and metal finishing generate substantial quantities of trade effluent, hazardous chemical residues, and air pollutants. In industrialized regions—such as Tamil Nadu's industrial corridors across Tiruppur, Manali, and Sriperumbudur—stringent statutory obligations mandate that facilities implement continuous environmental surveillance [2].
   </p>
   <p>
-    Manufacturing facilities operate under explicit regulatory mandates, chief among them the Consent to Operate (CTO) granted by State Pollution Control Boards. These permits establish legally enforceable chemical and physical discharge boundaries. However, facility managers and EHS engineers face significant hurdles in bridging operational plant floor activities with executive compliance governance. Field measurements, effluent probe tests, and periodic safety audits are frequently disconnected from corrective action management [3].
-  </p>
-  <p>
-    AuditFlow is an enterprise-grade full-stack engineering software platform designed to bridge the operational gap between raw facility metrics and executive sustainability tracking. Engineered upon the modern MERN (MongoDB, Express.js, React.js, Node.js) technology stack, AuditFlow delivers single-pane-of-glass operational visibility, algorithmic non-compliance escalation, and instant statutory return compilation under the operational paradigm: <i>"Audit it. Fix it. Report it."</i>
+    Manufacturing facilities operate under explicit regulatory mandates, chief among them the Consent to Operate (CTO) granted by State Pollution Control Boards. These permits establish legally enforceable chemical and physical discharge boundaries. AuditFlow is an enterprise-grade full-stack engineering software platform designed to bridge the operational gap between raw facility metrics and executive sustainability tracking on the modern MERN technology stack under the paradigm: <i>"Audit it. Fix it. Report it."</i>
   </p>
 
   <h4 class="sec">1.1.1 Industrial Chemistry & Pollution Abatement Fundamentals</h4>
   <p>
-    Industrial wastewater treatment and flue gas abatement involve complex biochemical and thermodynamic unit operations. In Effluent Treatment Plants (ETP) and Zero Liquid Discharge (ZLD) installations, raw trade effluent is treated through primary coagulation, secondary aerobic/anaerobic digestion, and tertiary reverse osmosis (RO). Key regulatory parameters include:
+    Industrial wastewater treatment and flue gas abatement involve complex biochemical unit operations. In Effluent Treatment Plants (ETP) and Zero Liquid Discharge (ZLD) installations, raw effluent undergoes coagulation, aerobic digestion, and reverse osmosis. Key regulatory parameters include:
   </p>
   <p>
-    1. <b>Biochemical Oxygen Demand (BOD):</b> Quantifies the dissolved oxygen consumed by aerobic microorganisms when decomposing organic matter:
+    1. <b>Biochemical Oxygen Demand (BOD):</b> Quantifies dissolved oxygen consumed by microorganisms:
   </p>
-  <div style="text-align: center; font-weight: bold; margin: 4px 0;">
+  <div style="text-align: center; font-weight: bold; margin: 3px 0;">
     BOD₅ = (DO_initial − DO_final) × Dilution Factor &nbsp;&nbsp;&nbsp;&nbsp;(1.1)
   </div>
   <p>
-    2. <b>Chemical Oxygen Demand (COD):</b> Measures total oxidizable organic and inorganic constituents via potassium dichromate digestion under acidic reflux:
+    2. <b>Chemical Oxygen Demand (COD):</b> Measures total oxidizable organic constituents via dichromate digestion:
   </p>
-  <div style="text-align: center; font-weight: bold; margin: 4px 0;">
+  <div style="text-align: center; font-weight: bold; margin: 3px 0;">
     Cr₂O₇²⁻ + 14H⁺ + 6e⁻ &rarr; 2Cr³⁺ + 7H₂O &nbsp;&nbsp;&nbsp;&nbsp;(1.2)
   </div>
   <p>
-    Maintaining BOD &le; 30 mg/L and COD &le; 250 mg/L is essential to prevent severe biological damage to receiving surface aquatic ecosystems.
+    Maintaining BOD &le; 30 mg/L and COD &le; 250 mg/L is essential to prevent biological damage to aquatic ecosystems.
   </p>
 `);
 
 // ================= PAGE 11: CHAPTER 1 (CONT) =================
 writePage(11, `
   <p>
-    Similarly, air emission monitoring requires strict oversight of suspended Particulate Matter (PM), Sulfur Dioxide (SO₂), and Nitrogen Oxides (NOx) emitted from industrial boilers, furnaces, and generator stacks. Tracking differentials between real-time stack emissions and statutory limits ensures industrial air scrubbers and electrostatic precipitators are functioning at rated operational efficiencies:
+    Similarly, air emission monitoring requires strict oversight of suspended Particulate Matter (PM), Sulfur Dioxide (SO₂), and Nitrogen Oxides (NOx) emitted from boilers, furnaces, and generator stacks. Tracking differentials between stack emissions and statutory limits ensures industrial air scrubbers function at rated operational efficiencies:
   </p>
-  <div style="text-align: center; font-weight: bold; margin: 5px 0;">
+  <div style="text-align: center; font-weight: bold; margin: 4px 0;">
     PM_efficiency = [ (PM_inlet − PM_outlet) / PM_inlet ] × 100 &nbsp;&nbsp;&nbsp;&nbsp;(1.3)
   </div>
   <p>
-    Continuous monitoring of particulate capture efficiency protects surrounding residential airsheds from hazardous breathable micro-particulates (&le; 2.5 µm).
+    Continuous monitoring of particulate capture efficiency protects surrounding airsheds from hazardous breathable micro-particulates (&le; 2.5 µm).
   </p>
 
   <h4 class="sec">1.1.2 National Environmental Policy Framework & TNPCB Mandates</h4>
   <p>
-    In India, industrial environmental governance is codified under the Water (Prevention and Control of Pollution) Act of 1974, the Air (Prevention and Control of Pollution) Act of 1981, and the Environment (Protection) Act of 1986. Under these legislative frameworks, the Central Pollution Control Board (CPCB) and State Pollution Control Boards—such as the Tamil Nadu Pollution Control Board (TNPCB)—enforce mandatory online monitoring and periodic statutory returns (Form V Environmental Statements and Form IV Hazardous Waste Returns).
-  </p>
-  <p>
-    Non-compliance carries catastrophic legal and financial repercussions, including immediate closure directions under Section 33A of the Water Act, disconnection of electricity supply, and substantial environmental compensation penalties calculated under National Green Tribunal (NGT) formulas. Consequently, enterprise software platforms like AuditFlow are essential to maintain tamper-proof, time-stamped digital audit ledgers verifying continual statutory compliance.
+    In India, industrial environmental governance is codified under the Water Act of 1974, Air Act of 1981, and Environment Protection Act of 1986. Under these frameworks, the CPCB and State Boards like TNPCB enforce mandatory online monitoring and periodic statutory returns (Form V Statements and Form IV Hazardous Waste Returns). Non-compliance carries severe legal penalties under Section 33A of the Water Act.
   </p>
 
   <h4 class="sec">1.2 PROBLEM DEFINITION</h4>
@@ -696,11 +694,11 @@ writePage(11, `
     In contemporary manufacturing operations, environmental compliance management remains fragmented, siloed, and vulnerable to systemic failures:
   </p>
   <ol>
-    <li><b>High Transcription Error Rates:</b> Field technicians manually note analog probe readings, manometer pressures, and chemical dosing logs on paper clipboards. Manual transcription into disconnected spreadsheets introduces significant data corruption and delayed calculations.</li>
-    <li><b>Delayed Anomaly Visibility:</b> When trade effluent parameters exceed statutory limits, paper or spreadsheet logs fail to provide immediate alerting. Exceedances remain unnoticed until routine weekly reviews, during which continuous toxic contamination may have occurred.</li>
-    <li><b>Absence of Automated Remediation (CAPA):</b> Traditional audit checklists simply document non-compliances without enforcing remediation workflows. Non-compliant items linger without designated owners, time-bound SLAs, or verification audit trails.</li>
-    <li><b>Clerical Friction in Statutory Returns:</b> Preparing mandatory quarterly or annual returns for pollution control boards requires weeks of manual reconciliation across disparate site records.</li>
-    <li><b>Zero Provenance & Inadequate Access Control:</b> Unsecured office spreadsheets lack cryptographic session authentication, allowing accidental overwrites, retroactive date tampering, and unverified data deletion without an audit trail.</li>
+    <li><b>High Transcription Error Rates:</b> Analog probe readings recorded on paper clipboards and transcribed into spreadsheets introduce significant data corruption and calculation errors.</li>
+    <li><b>Delayed Anomaly Visibility:</b> Paper logs fail to trigger alerts when effluent exceeds statutory limits, leaving toxic breaches unnoticed until weekly reviews.</li>
+    <li><b>Absence of Automated Remediation:</b> Traditional checklists document non-compliances without enforcing remediation workflows, SLAs, or verification audit trails.</li>
+    <li><b>Clerical Friction in Statutory Returns:</b> Compiling mandatory pollution control board returns requires weeks of manual reconciliation across disparate site records.</li>
+    <li><b>Zero Provenance & Inadequate Access Control:</b> Unsecured spreadsheets lack cryptographic authentication, enabling accidental overwrites and unverified data tampering.</li>
   </ol>
 `);
 
