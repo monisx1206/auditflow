@@ -39,7 +39,7 @@ out.write(`<!DOCTYPE html>
       width: 210mm !important;
       height: 297mm !important;
       margin: 0 !important;
-      padding: 16mm 16mm 14mm 28mm !important; /* Standard 28mm Left Binding Margin */
+      padding: 16mm 20mm 14mm 20mm !important; /* Balanced 20mm Symmetric Margins */
       page-break-after: always !important;
       break-after: page !important;
       page-break-inside: avoid !important;
@@ -49,8 +49,8 @@ out.write(`<!DOCTYPE html>
   * { box-sizing: border-box; }
   body {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 12pt;
-    line-height: 1.55;
+    font-size: 11.5pt;
+    line-height: 1.48;
     color: #000;
     margin: 0;
     padding: 0;
@@ -65,7 +65,7 @@ out.write(`<!DOCTYPE html>
   .page {
     width: 210mm;
     height: 297mm;
-    padding: 16mm 16mm 14mm 28mm; /* Left 28mm for binding */
+    padding: 16mm 20mm 14mm 20mm; /* Centered 20mm Margins */
     position: relative;
     background: #fff;
     page-break-after: always;
@@ -76,7 +76,7 @@ out.write(`<!DOCTYPE html>
   .page-border {
     border: 1.2px solid #000;
     height: 100%;
-    padding: 18px 22px 14px 22px;
+    padding: 16px 20px 12px 20px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -134,7 +134,7 @@ out.write(`<!DOCTYPE html>
     text-align: left;
   }
   h5.subsec {
-    font-size: 12pt;
+    font-size: 10pt;
     font-weight: bold;
     font-style: italic;
     margin: 8px 0 3px 0;
@@ -144,17 +144,17 @@ out.write(`<!DOCTYPE html>
   p {
     text-align: justify;
     text-justify: inter-word;
-    margin: 6px 0;
-    text-indent: 28px;
-    font-size: 12pt;
-    line-height: 1.55;
+    margin: 4px 0;
+    text-indent: 24px;
+    font-size: 10pt;
+    line-height: 1.45;
   }
   p.no-indent { text-indent: 0; }
 
   ul, ol {
     margin: 6px 0 8px 24px;
     padding: 0;
-    font-size: 12pt;
+    font-size: 10pt;
     line-height: 1.52;
   }
   li { margin-bottom: 5px; text-align: justify; }
@@ -199,10 +199,10 @@ out.write(`<!DOCTYPE html>
   pre {
     background: #f8fafc;
     border: 1px solid #cbd5e1;
-    padding: 6px 8px;
+    padding: 4px 6px;
     font-family: 'Courier New', monospace;
-    font-size: 8.5pt;
-    line-height: 1.3;
+    font-size: 7.8pt;
+    line-height: 1.25;
     margin: 5px 0;
     white-space: pre-wrap;
     word-break: break-all;
@@ -217,8 +217,8 @@ out.write(`<!DOCTYPE html>
   .toc-entry {
     display: flex;
     justify-content: space-between;
-    margin: 3.5px 0;
-    font-size: 11pt;
+    margin: 2px 0;
+    font-size: 10pt;
   }
   .toc-dot {
     flex-grow: 1;
@@ -284,7 +284,7 @@ writePage(1, `
   <h2 class="report-sub">A PROJECT REPORT</h2>
   
   <div style="text-align: center; margin: 30px 0;">
-    <p class="no-indent" style="text-align: center; font-size: 12pt;"><i>Submitted by</i></p>
+    <p class="no-indent" style="text-align: center; font-size: 10pt;"><i>Submitted by</i></p>
     <p class="no-indent" style="text-align: center; font-size: 15pt; font-weight: bold; margin: 8px 0; letter-spacing: 0.5px;">
       MONISH H (310624148060)
     </p>
@@ -294,7 +294,7 @@ writePage(1, `
     <p class="no-indent" style="text-align: center; font-size: 11.5pt;"><i>in partial fulfillment for the award of the Degree</i></p>
     <p class="no-indent" style="text-align: center; font-size: 11.5pt; margin: 4px 0;"><i>of</i></p>
     <p class="no-indent" style="text-align: center; font-size: 13.5pt; font-weight: bold;">BACHELOR OF ENGINEERING</p>
-    <p class="no-indent" style="text-align: center; font-size: 11pt; margin: 4px 0;"><i>in</i></p>
+    <p class="no-indent" style="text-align: center; font-size: 10pt; margin: 4px 0;"><i>in</i></p>
     <p class="no-indent" style="text-align: center; font-size: 13pt; font-weight: bold;">
       COMPUTER SCIENCE AND ENGINEERING (AI & ML)
     </p>
@@ -332,7 +332,7 @@ writePage(2, `
     BONAFIDE CERTIFICATE
   </h3>
 
-  <p style="line-height: 2.2; font-size: 12pt; margin-top: 25px;">
+  <p style="line-height: 2.2; font-size: 10pt; margin-top: 25px;">
     Certified that this mini project report titled <b>“AUDITFLOW: ENVIRONMENTAL AUDIT, INSPECTION, CAPA AND STATUTORY REPORTING PLATFORM”</b> is the Bonafide work of <b>“MONISH H (310624148060)”</b>, who carried out the project work under my supervision.
   </p>
 
@@ -372,7 +372,7 @@ writePage(3, `
     Certificate of Viva-voce-Examination
   </h3>
 
-  <p style="line-height: 2.0; font-size: 12pt; margin-top: 20px;">
+  <p style="line-height: 2.0; font-size: 10pt; margin-top: 20px;">
     This is to certify that the Viva Voce Examination of the Project Work entitled <b>“AUDITFLOW: ENVIRONMENTAL AUDIT, INSPECTION, CAPA AND STATUTORY REPORTING PLATFORM”</b> submitted by <b>MONISH H (Reg. No. 310624148060)</b> in partial fulfillment of the requirements for the award of the degree of Bachelor of Engineering in Computer Science and Engineering (AI & ML) was conducted on ________________ (Date) in the Department of Computer Science and Engineering (AI & ML), Easwari Engineering College, Ramapuram – Chennai.
   </p>
 
@@ -383,14 +383,14 @@ writePage(3, `
   <div style="height: 80px;"></div>
 
   <div style="display: flex; justify-content: space-between; padding: 0 15px;">
-    <div style="text-align: left; font-size: 11pt;">
+    <div style="text-align: left; font-size: 10pt;">
       <div style="border-top: 1px solid #111; width: 200px; margin-bottom: 6px;"></div>
       <b>Internal Examiner</b><br>
       Name : ________________________<br>
       Designation: ____________________<br>
       Address : ______________________
     </div>
-    <div style="text-align: left; font-size: 11pt;">
+    <div style="text-align: left; font-size: 10pt;">
       <div style="border-top: 1px solid #111; width: 200px; margin-bottom: 6px;"></div>
       <b>External Examiner</b><br>
       Name : ________________________<br>
@@ -599,7 +599,7 @@ writePage(8, `
   </div>
 
   <div style="margin-top: 35px; padding: 12px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px;">
-    <p class="no-indent" style="font-size: 11pt; line-height: 1.5; color: #334155;">
+    <p class="no-indent" style="font-size: 10pt; line-height: 1.5; color: #334155;">
       <b>Note on Figure Conventions:</b> Architectural, sequence, and entity-relationship models adhere to standard Unified Modeling Language (UML 2.5) structural and behavioral specifications. System interface screenshots in Chapter 8 represent active production views captured from the live deployment instance at <code>https://auditflow-pi-two.vercel.app</code>.
     </p>
   </div>
@@ -628,7 +628,7 @@ writePage(9, `
   </div>
 
   <div style="margin-top: 35px; padding: 12px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px;">
-    <p class="no-indent" style="font-size: 11pt; line-height: 1.5; color: #334155;">
+    <p class="no-indent" style="font-size: 10pt; line-height: 1.5; color: #334155;">
       <b>Note on Regulatory Citations:</b> Tolerance thresholds specified in Table 3.2 are derived directly from the Environment (Protection) Rules of 1986, Schedule VI General Standards for Discharge of Environmental Pollutants, and Tamil Nadu Pollution Control Board (TNPCB) Consent to Operate (CTO) operational schedules.
     </p>
   </div>
@@ -1622,11 +1622,6 @@ module.exports = function () {
     <li>Chemical and physical parameters are strictly asserted as non-negative floating-point values (&ge; 0).</li>
     <li>String inputs are trimmed and sanitized against SQL/NoSQL operator injections, preventing query manipulation.</li>
   </ul>
-
-  <h4 class="sec">5.6.7 Real-Time State Synchronization and Optimistic Updates</h4>
-  <p>
-    The frontend implements optimistic state updates across checklist toggles and status badges. When an auditor checks an item, the local component state reflects the change instantly while sending asynchronous PATCH requests in the background, providing immediate tactile response times.
-  </p>
 `);
 
 // ================= PAGE 33: CHAPTER 5 (CONT) =================
@@ -2166,16 +2161,13 @@ export var useAuth = function () { return useContext(AuthContext); };
   <h4 class="sec">11. Defensive Request Validation Middleware (validate.js)</h4>
   <pre>
 exports.validateInspection = function (req, res, next) {
-  var site = req.body.site;
-  var date = req.body.date;
-  var readings = req.body.readings;
+  var { site, date, readings } = req.body;
   if (!site || !date || !Array.isArray(readings) || readings.length === 0) {
     return res.status(400).json({ message: 'Site, date, and non-empty readings are required' });
   }
-  for (var i = 0; i < readings.length; i++) {
-    var r = readings[i];
+  for (var r of readings) {
     if (typeof r.value !== 'number' || isNaN(r.value) || r.value < 0) {
-      return res.status(400).json({ message: 'Invalid value for parameter: ' + r.parameter });
+      return res.status(400).json({ message: 'Invalid value for: ' + r.parameter });
     }
   }
   next();
@@ -2197,7 +2189,7 @@ writePage(46, `
     The login interface provides secure cryptographic access control with email validation and pre-populated credential shortcuts for rapid evaluation across Lead Auditor, Site Manager, and Administrator accounts.
   </p>
 
-  <img class="shot-img" src="screenshot_login.png" alt="AuditFlow Login Interface" style="max-height: 145mm;" />
+  <img class="shot-img" src="screenshot_login.png" alt="AuditFlow Login Interface" style="max-height: 125mm;" />
   <div class="caption">Figure S.1: Secure Login and User Authentication Interface</div>
 `);
 
@@ -2207,14 +2199,14 @@ writePage(47, `
   <p>
     The Operations Dashboard consolidates overall compliance health, active facility count, open/overdue CAPAs, and an executive 60-day visual timeline ribbon mapping immediate remediation deadlines.
   </p>
-  <img class="shot-img" src="screenshot_dashboard.png" alt="AuditFlow Dashboard" style="max-height: 98mm;" />
+  <img class="shot-img" src="screenshot_dashboard.png" alt="AuditFlow Dashboard" style="max-height: 80mm;" />
   <div class="caption">Figure S.2: AuditFlow Operations Dashboard with 60-Day Visual Timeline Ribbon</div>
 
   <h4 class="sec" style="margin-top: 8px;">3. Multi-Facility Industrial Sites Management</h4>
   <p>
     The Sites catalog manages registered manufacturing plants, displaying industrial risk categories (Red/Orange/Green), geographic locations, assigned plant managers, and CTO consent validity dates.
   </p>
-  <img class="shot-img" src="screenshot_sites.png" alt="AuditFlow Sites Management" style="max-height: 98mm;" />
+  <img class="shot-img" src="screenshot_sites.png" alt="AuditFlow Sites Management" style="max-height: 80mm;" />
   <div class="caption">Figure S.3: Multi-Facility Industrial Sites Management Directory</div>
 `);
 
@@ -2224,14 +2216,14 @@ writePage(48, `
   <p>
     The Audits module provides dynamic, domain-categorized checklists (Water, Effluent, Air, Hazardous Waste, Consents). Toggling compliance updates real-time scores and locks the audit upon final completion.
   </p>
-  <img class="shot-img" src="screenshot_audits.png" alt="AuditFlow Audit Execution" style="max-height: 98mm;" />
+  <img class="shot-img" src="screenshot_audits.png" alt="AuditFlow Audit Execution" style="max-height: 80mm;" />
   <div class="caption">Figure S.4: Environmental Audit Execution & Dynamic Checklist Scoring View</div>
 
   <h4 class="sec" style="margin-top: 8px;">5. Effluent & Stack Emission Inspection Logger</h4>
   <p>
     The Inspections interface records chemical and physical probe readings. The system automatically evaluates values against consent limits, flagging exceedances with prominent warning badges and auto-raising incident CAPAs.
   </p>
-  <img class="shot-img" src="screenshot_inspections.png" alt="AuditFlow Inspection Logger" style="max-height: 98mm;" />
+  <img class="shot-img" src="screenshot_inspections.png" alt="AuditFlow Inspection Logger" style="max-height: 80mm;" />
   <div class="caption">Figure S.5: Effluent & Stack Inspection Logger with Statutory Limit Alerts</div>
 `);
 
@@ -2241,14 +2233,14 @@ writePage(49, `
   <p>
     The CAPA tracking interface enforces time-bound remediation workflows (Open &rarr; In Progress &rarr; Pending Verification &rarr; Closed). Managers submit root causes and photographic evidence, while closure requires auditor sign-off.
   </p>
-  <img class="shot-img" src="screenshot_capas.png" alt="AuditFlow CAPA Management" style="max-height: 98mm;" />
+  <img class="shot-img" src="screenshot_capas.png" alt="AuditFlow CAPA Management" style="max-height: 80mm;" />
   <div class="caption">Figure S.6: 4-Stage CAPA Remediation Management & Evidence Upload Modal</div>
 
   <h4 class="sec" style="margin-top: 8px;">7. Statutory Return Summary & Regulatory CSV Export</h4>
   <p>
     The Statutory Reporting module aggregates multi-site operational metrics into standardized compliance return summaries, providing one-click CSV export formatted for submission to State Pollution Control Boards.
   </p>
-  <img class="shot-img" src="screenshot_reports.png" alt="AuditFlow Statutory Reports" style="max-height: 98mm;" />
+  <img class="shot-img" src="screenshot_reports.png" alt="AuditFlow Statutory Reports" style="max-height: 80mm;" />
   <div class="caption">Figure S.7: Statutory Return Summary & Regulatory One-Click CSV Export Interface</div>
 `);
 
