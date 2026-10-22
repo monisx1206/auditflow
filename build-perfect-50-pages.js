@@ -2,6 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const { spawn } = require('child_process');
 
+const easwariLogoPath = path.join(__dirname, 'easwari_logo.png');
+const easwariLogoB64 = fs.existsSync(easwariLogoPath)
+  ? 'data:image/png;base64,' + fs.readFileSync(easwariLogoPath).toString('base64')
+  : '';
+
 console.log('Generating perfected 50-page academic report with 12pt font, full text pages, and proper binding margins...');
 
 const htmlPath = path.join(__dirname, 'AUDITFLOW_PROJECT_REPORT_50_PAGES.html');
@@ -236,21 +241,20 @@ out.write(`<!DOCTYPE html>
     top: -4px;
   }
 
-  .college-circle {
-    width: 82px;
-    height: 82px;
-    margin: 10px auto;
-    border-radius: 50%;
-    border: 2.5px double #047857;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 7.5pt;
-    font-weight: bold;
-    color: #065f46;
-    background: #ecfdf5;
-    line-height: 1.2;
+  .college-emblem {
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+  .emblem-cover {
+    width: 95px;
+    height: 95px;
+    margin: 10px auto 8px auto;
+  }
+  .emblem-cert {
+    width: 78px;
+    height: 78px;
+    margin: 2px auto 6px auto;
   }
 
   .shot-img {
@@ -311,11 +315,9 @@ writePage(1, `
     </p>
   </div>
 
-  <div class="college-circle">
-    <span>EASWARI<br>ENGG<br>COLLEGE</span>
-  </div>
+  <img class="college-emblem emblem-cover" src="${easwariLogoB64}" alt="Easwari Engineering College Emblem">
 
-  <div style="text-align: center; margin-top: 22px;">
+  <div style="text-align: center; margin-top: 18px;">
     <p class="no-indent" style="text-align: center; font-size: 13pt; font-weight: bold;">
       EASWARI ENGINEERING COLLEGE
     </p>
@@ -330,21 +332,23 @@ writePage(1, `
 
 // ================= PAGE 2: BONAFIDE =================
 writePage(2, `
-  <div class="college-circle" style="margin: 6px auto;">
-    <span>EASWARI<br>ENGG<br>COLLEGE</span>
-  </div>
-  <h2 style="text-align: center; font-size: 13pt; font-weight: bold; margin: 8px 0;">
+  <img class="college-emblem emblem-cert" src="${easwariLogoB64}" alt="Easwari Engineering College Emblem">
+  <h2 style="text-align: center; font-size: 13.5pt; font-weight: bold; margin: 4px 0 2px 0; letter-spacing: 0.5px;">
     EASWARI ENGINEERING COLLEGE
   </h2>
-  <h3 style="text-align: center; font-size: 13pt; font-weight: bold; margin-bottom: 30px; letter-spacing: 0.5px;">
+  <p class="no-indent" style="text-align: center; font-size: 9.5pt; margin: 0 0 8px 0; font-style: italic;">
+    (An Autonomous Institution, Affiliated to Anna University, Chennai)<br>
+    Bharathi Salai, Ramapuram, Chennai &ndash; 600 089
+  </p>
+  <h3 style="text-align: center; font-size: 13pt; font-weight: bold; margin-bottom: 22px; letter-spacing: 0.5px;">
     BONAFIDE CERTIFICATE
   </h3>
 
-  <p style="line-height: 2.2; font-size: 10pt; margin-top: 25px;">
+  <p style="line-height: 2.1; font-size: 10.5pt; margin-top: 16px;">
     Certified that this mini project report titled <b>“AUDITFLOW: ENVIRONMENTAL AUDIT, INSPECTION, CAPA AND STATUTORY REPORTING PLATFORM”</b> is the Bonafide work of <b>“MONISH H (310624148060)”</b>, who carried out the project work under my supervision.
   </p>
 
-  <div style="height: 120px;"></div>
+  <div style="height: 105px;"></div>
 
   <div style="display: flex; justify-content: space-between; padding: 0 15px;">
     <div style="text-align: center; font-weight: bold;">
@@ -370,25 +374,27 @@ writePage(2, `
 
 // ================= PAGE 3: VIVA VOCE =================
 writePage(3, `
-  <div class="college-circle" style="margin: 6px auto;">
-    <span>EASWARI<br>ENGG<br>COLLEGE</span>
-  </div>
-  <h2 style="text-align: center; font-size: 13pt; font-weight: bold; margin: 8px 0;">
+  <img class="college-emblem emblem-cert" src="${easwariLogoB64}" alt="Easwari Engineering College Emblem">
+  <h2 style="text-align: center; font-size: 13.5pt; font-weight: bold; margin: 4px 0 2px 0; letter-spacing: 0.5px;">
     EASWARI ENGINEERING COLLEGE
   </h2>
-  <h3 style="text-align: center; font-size: 13pt; font-weight: bold; margin-bottom: 25px;">
-    Certificate of Viva-voce-Examination
+  <p class="no-indent" style="text-align: center; font-size: 9.5pt; margin: 0 0 8px 0; font-style: italic;">
+    (An Autonomous Institution, Affiliated to Anna University, Chennai)<br>
+    Bharathi Salai, Ramapuram, Chennai &ndash; 600 089
+  </p>
+  <h3 style="text-align: center; font-size: 13pt; font-weight: bold; margin-bottom: 18px;">
+    CERTIFICATE OF VIVA-VOCE EXAMINATION
   </h3>
 
-  <p style="line-height: 2.0; font-size: 10pt; margin-top: 20px;">
+  <p style="line-height: 1.95; font-size: 10.5pt; margin-top: 14px;">
     This is to certify that the Viva Voce Examination of the Project Work entitled <b>“AUDITFLOW: ENVIRONMENTAL AUDIT, INSPECTION, CAPA AND STATUTORY REPORTING PLATFORM”</b> submitted by <b>MONISH H (Reg. No. 310624148060)</b> in partial fulfillment of the requirements for the award of the degree of Bachelor of Engineering in Computer Science and Engineering (AI & ML) was conducted on ________________ (Date) in the Department of Computer Science and Engineering (AI & ML), Easwari Engineering College, Ramapuram – Chennai.
   </p>
 
-  <p class="no-indent" style="margin-top: 45px; font-weight: bold;">
+  <p class="no-indent" style="margin-top: 35px; font-weight: bold;">
     Date: ________________________
   </p>
 
-  <div style="height: 80px;"></div>
+  <div style="height: 60px;"></div>
 
   <div style="display: flex; justify-content: space-between; padding: 0 15px;">
     <div style="text-align: left; font-size: 10pt;">

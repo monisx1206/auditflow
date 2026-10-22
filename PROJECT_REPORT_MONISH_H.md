@@ -12,11 +12,23 @@
 
 ---
 
+<p align="center">
+  <img src="easwari_logo.png" alt="Easwari Engineering College Emblem" width="110"/>
+</p>
+
 ### **EASWARI ENGINEERING COLLEGE**  
 *(AN AUTONOMOUS INSTITUTION) – AFFILIATED TO ANNA UNIVERSITY, CHENNAI*  
 **OCTOBER 2026**
 
 ---
+
+<p align="center">
+  <img src="easwari_logo.png" alt="Easwari Engineering College Emblem" width="80"/>
+</p>
+
+### **EASWARI ENGINEERING COLLEGE**  
+*(An Autonomous Institution, Affiliated to Anna University, Chennai)*  
+**RAMAPURAM, CHENNAI – 600 089**
 
 ## BONAFIDE CERTIFICATE
 
